@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+{% block title %}كل الكتب · LibraryHub{% endblock %}
+{% block body %}
+<div class="page-header">
+  <div>
+    <h1>الكتب</h1>
+    <p class="dim">{{ books|length }} كتاب في المكتبة</p>
+  </div>
+  <a class="btn btn-main" href="{{ url_for('add_book') }}">+ إضافة كتاب</a>
+</div>
+
+{% if books %}
+<div class="books-grid">
+  {% for b in books %}
+  <article class="book-card">
+    <div class="book-top">
+      <span class="tag">{{ b.genre or 'غير مصنّف' }}</span>
+      <span class="year">{{ b.year }}</span>
+    </div>
+
+    <h2 class="book-title">
+      <a href="{{ url_for('details_book', bid=b.id) }}">{{ b.title }}</a>
+    </h2>
+
+    <p class="book-author">بقلم: {{ b.author }}</p>
+    <p class="book-summary">{{ b.summary or 'لا يوجد ملخص.'|truncate(80) }}</p>
+
+    <div class="book-meta">
+      <span>الصفحات: <strong>{{ b.pages }}</strong></span>
+      <span>
+        {% if b.available %}
+        <span class="pill pill-yes">متوفر</span>
+        {% else %}
+        <span class="pill pill-no">مستعار</span>
+        {% endif %}
+      </span>
+    </div>
+
+    <div class="book-actions">
+      <a class="btn btn-ghost btn-small" href="{{ url_for('details_book', bid=b.id) }}">عرض</a>
+      <a class="btn btn-ghost btn-small" href="{{ url_for('edit_book', bid=b.id) }}">تعديل</a>
+      <form method="post" action="{{ url_for('delete_book', bid=b.id) }}"
+            onsubmit="return confirm('حذف {{ b.title }}؟');">
+        <button type="submit" class="btn btn-danger btn-small">حذف</button>
+      </form>
+    </div>
+  </article>
+  {% endfor %}
+</div>
+{% else %}
+<div class="empty">
+  <div class="empty-icon">📭</div>
+  <h2>لا توجد كتب بعد</h2>
+  <p class="dim">ابدأ بإضافة أول كتاب إلى المكتبة.</p>
+  <a class="btn btn-main" href="{{ url_for('add_book') }}">إضافة أول كتاب</a>
+</div>
+{% endif %}
+{% endblock %}

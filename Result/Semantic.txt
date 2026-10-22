@@ -1,0 +1,48 @@
+=== Semantic Check ===
+
+❌ Line 127: invalid assignment target
+❌ Line 142: invalid assignment target
+❌ Line 237: builtin 'getattr' expects 2, got 3
+❌ Line 309: 'send_css' expects 2, got 1
+❌ Line 314: 'send_html' expects 3, got 1
+❌ Line 319: 'send_html' expects 3, got 1
+❌ Line 328: 'send_html' expects 3, got 1
+❌ Line 331: 'send_html' expects 3, got 1
+❌ Line 340: 'send_html' expects 3, got 1
+❌ Line 343: 'send_html' expects 3, got 1
+❌ Line 347: 'send_html' expects 3, got 1
+❌ Line 351: 'read_form' expects 1, got 0
+❌ Line 365: 'redirect_to' expects 2, got 1
+❌ Line 374: 'send_html' expects 3, got 1
+❌ Line 376: invalid assignment target
+❌ Line 377: invalid assignment target
+❌ Line 378: invalid assignment target
+❌ Line 379: invalid assignment target
+❌ Line 380: invalid assignment target
+❌ Line 381: invalid assignment target
+❌ Line 382: invalid assignment target
+❌ Line 383: 'redirect_to' expects 2, got 1
+❌ Line 392: 'send_html' expects 3, got 1
+❌ Line 395: 'redirect_to' expects 2, got 1
+❌ Line 399: 'send_html' expects 3, got 1
+❌ Jinja [book_form] Line 1: undefined variable 'book'
+❌ Jinja [book_info] Line 2: undefined variable 'book'
+❌ Jinja [book_info] Line 15: undefined variable 'book'
+❌ Jinja [book_info] Line 16: undefined variable 'book'
+❌ Jinja [book_info] Line 17: undefined variable 'book'
+❌ Jinja [book_info] Line 19: undefined variable 'book'
+❌ Jinja [book_info] Line 25: undefined variable 'book'
+❌ Jinja [book_info] Line 29: undefined variable 'book'
+❌ Jinja [book_info] Line 33: undefined variable 'book'
+❌ Jinja [book_info] Line 37: undefined variable 'book'
+❌ Jinja [book_info] Line 42: undefined variable 'book'
+❌ Jinja [book_info] Line 51: undefined variable 'book'
+❌ Jinja [book_info] Line 56: undefined variable 'book'
+❌ Jinja [book_info] Line 57: undefined variable 'book'
+❌ Jinja [modify_book] Line 2: undefined variable 'book'
+❌ Jinja [modify_book] Line 7: undefined variable 'book'
+❌ Jinja [modify_book] Line 7: undefined variable 'book'
+❌ Jinja [modify_book] Line 9: undefined variable 'book'
+❌ Jinja [modify_book] Line 12: undefined variable 'book'
+❌ Jinja [modify_book] Line 16: undefined variable 'book'
+⚠️  Line 51: parameter 'bid' is never used

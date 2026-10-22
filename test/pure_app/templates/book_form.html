@@ -1,0 +1,58 @@
+{% set b = book or {} %}
+
+<div class="field">
+  <label for="title">عنوان الكتاب <span class="req">*</span></label>
+  <input type="text" id="title" name="title" maxlength="120" required
+         placeholder="مثال: Clean Code" value="{{ b.get('title', '') }}" />
+</div>
+
+<div class="field-row">
+  <div class="field">
+    <label for="author">المؤلف</label>
+    <input type="text" id="author" name="author"
+           placeholder="مثال: Robert Martin" value="{{ b.get('author', '') }}" />
+  </div>
+  <div class="field">
+    <label for="genre">التصنيف</label>
+    <input type="text" id="genre" name="genre"
+           list="genre-options"
+           placeholder="مثال: Programming" value="{{ b.get('genre', '') }}" />
+    <datalist id="genre-options">
+      <option value="Programming"></option>
+      <option value="Software Engineering"></option>
+      <option value="Mathematics"></option>
+      <option value="Science"></option>
+      <option value="History"></option>
+    </datalist>
+  </div>
+</div>
+
+<div class="field-row">
+  <div class="field">
+    <label for="year">سنة النشر <span class="req">*</span></label>
+    <input type="number" id="year" name="year" min="1000" max="2100" required
+           placeholder="2025" value="{{ b.get('year', '') }}" />
+  </div>
+  <div class="field">
+    <label for="pages">عدد الصفحات <span class="req">*</span></label>
+    <input type="number" id="pages" name="pages" min="1" required
+           placeholder="300" value="{{ b.get('pages', '') }}" />
+  </div>
+</div>
+
+<div class="field">
+  <label class="checkbox-label">
+    {% if b.get('available', False) %}
+    <input type="checkbox" name="available" value="on" checked />
+    {% else %}
+    <input type="checkbox" name="available" value="on" />
+    {% endif %}
+    الكتاب متوفر في المكتبة
+  </label>
+</div>
+
+<div class="field">
+  <label for="summary">الملخص</label>
+  <textarea id="summary" name="summary" rows="4" maxlength="800"
+            placeholder="ملخص قصير عن الكتاب…">{{ b.get('summary', '') }}</textarea>
+</div>

@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{% block title %}{{ book.title }} · LibraryHub{% endblock %}
+{% block body %}
+<div class="page-header">
+  <div>
+    <h1>تفاصيل الكتاب</h1>
+    <p class="dim">كل المعلومات عن هذا الكتاب.</p>
+  </div>
+  <a class="btn btn-ghost" href="{{ url_for('index') }}">← كل الكتب</a>
+</div>
+
+<article class="info-card">
+  <header class="info-header">
+    <div>
+      <span class="tag">{{ book.genre or 'غير مصنّف' }}</span>
+      <h2>{{ book.title }}</h2>
+      <p class="dim">بقلم: {{ book.author }}</p>
+    </div>
+    <div class="year-badge">{{ book.year }}</div>
+  </header>
+
+  <dl class="info-list">
+    <div>
+      <dt>المعرّف</dt>
+      <dd>#{{ book.id }}</dd>
+    </div>
+    <div>
+      <dt>التصنيف</dt>
+      <dd>{{ book.genre or '—' }}</dd>
+    </div>
+    <div>
+      <dt>السنة</dt>
+      <dd>{{ book.year }}</dd>
+    </div>
+    <div>
+      <dt>عدد الصفحات</dt>
+      <dd>{{ book.pages }}</dd>
+    </div>
+    <div>
+      <dt>الحالة</dt>
+      <dd>
+        {% if book.available %}
+        <span class="pill pill-yes">متوفر</span>
+        {% else %}
+        <span class="pill pill-no">مستعار</span>
+        {% endif %}
+      </dd>
+    </div>
+    <div class="full">
+      <dt>الملخص</dt>
+      <dd>{{ book.summary or 'لا يوجد ملخص.' }}</dd>
+    </div>
+  </dl>
+
+  <div class="info-actions">
+    <a class="btn btn-main" href="{{ url_for('edit_book', bid=book.id) }}">تعديل الكتاب</a>
+    <form method="post" action="{{ url_for('delete_book', bid=book.id) }}"
+          onsubmit="return confirm('حذف نهائي؟');">
+      <button type="submit" class="btn btn-danger">حذف الكتاب</button>
+    </form>
+  </div>
+</article>
+{% endblock %}

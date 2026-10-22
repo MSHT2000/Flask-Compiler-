@@ -1,0 +1,219 @@
+=== Symbol Table ===
+
+Scope: global
+  find_book : function (function) params=1 [line 51]
+  escape_html : function (function) params=1 [line 59]
+  load_template : function (function) params=1 [line 73]
+  render : function (function) params=2 [line 79]
+  render_string : function (function) params=2 [line 115]
+  extract_blocks : function (function) params=1 [line 123]
+  process_for : function (function) params=2 [line 131]
+  process_if : function (function) params=2 [line 151]
+  evaluate : function (function) params=2 [line 166]
+  process_expressions : function (function) params=2 [line 177]
+  eval_expression : function (function) params=2 [line 185]
+  url_for : function (function) params=3 [line 262]
+  RequestHandler : class (class) [line 281]
+  HTTPServer : import (import) [line 5]
+  BaseHTTPRequestHandler : import (import) [line 5]
+  urllib : import (import) [line 6]
+  re : import (import) [line 7]
+  os : import (import) [line 8]
+  books : variable [line 14]
+  Scope: function:find_book
+    bid : parameter [line 51]
+    Scope: for
+      b : variable [line 53]
+      Scope: if
+  Scope: function:escape_html
+    text : parameter [line 59]
+    Scope: if
+  Scope: function:load_template
+    name : parameter [line 73]
+    path : variable [line 74]
+  Scope: function:render
+    template_name : parameter [line 79]
+    context : parameter [line 79]
+    template : variable [line 80]
+    extends_match : variable [line 83]
+    include_pattern : variable [line 94]
+    replace_include : function (function) params=1 [line 95]
+    Scope: if
+      parent_name : variable [line 85]
+      parent : variable [line 86]
+      child_blocks : variable [line 87]
+      template : variable [line 91]
+      Scope: for
+        block_name : variable [line 88]
+        block_content : variable [line 88]
+        pattern : variable [line 89]
+        parent : variable [line 90]
+    Scope: function:replace_include
+      m : parameter [line 95]
+      included : variable [line 96]
+  Scope: function:render_string
+    template : parameter [line 115]
+    context : parameter [line 115]
+  Scope: function:extract_blocks
+    template : parameter [line 123]
+    blocks : variable [line 124]
+    pattern : variable [line 125]
+    Scope: for
+      m : variable [line 126]
+  Scope: function:process_for
+    template : parameter [line 131]
+    context : parameter [line 131]
+    pattern : variable [line 132]
+    replace_for : function (function) params=1 [line 134]
+    Scope: function:replace_for
+      m : parameter [line 134]
+      var_name : variable [line 135]
+      iterable_name : variable [line 136]
+      body : variable [line 137]
+      iterable : variable [line 138]
+      result : variable [line 139]
+      Scope: for
+        item : variable [line 140]
+        local_context : variable [line 141]
+    Scope: while
+      template : variable [line 147]
+  Scope: function:process_if
+    template : parameter [line 151]
+    context : parameter [line 151]
+    pattern : variable [line 152]
+    replace_if : function (function) params=1 [line 154]
+    Scope: function:replace_if
+      m : parameter [line 154]
+      condition : variable [line 155]
+      then_body : variable [line 156]
+      else_body : variable [line 157]
+      result : variable [line 158]
+    Scope: while
+      template : variable [line 162]
+  Scope: function:evaluate
+    condition : parameter [line 166]
+    context : parameter [line 166]
+    Scope: for
+      key : variable [line 169]
+      value : variable [line 169]
+      condition : variable [line 170]
+  Scope: function:process_expressions
+    template : parameter [line 177]
+    context : parameter [line 177]
+    pattern : variable [line 178]
+    replace_expr : function (function) params=1 [line 179]
+    Scope: function:replace_expr
+      m : parameter [line 179]
+      expr : variable [line 180]
+  Scope: function:eval_expression
+    expr : parameter [line 185]
+    context : parameter [line 185]
+    m : variable [line 207]
+    Scope: if
+      parts : variable [line 190]
+      value : variable [line 191]
+      filter_part : variable [line 192]
+      m : variable [line 196]
+      Scope: if
+      Scope: if
+      Scope: if
+      Scope: if
+    Scope: if
+    Scope: if
+      parts : variable [line 213]
+      left : variable [line 214]
+      Scope: if
+    Scope: if
+      then_val : variable [line 222]
+      cond : variable [line 223]
+      else_val : variable [line 224]
+    Scope: if
+      parts : variable [line 229]
+      obj : variable [line 230]
+      Scope: for
+        attr : variable [line 231]
+        Scope: if
+        Scope: if
+          obj : variable [line 235]
+        Scope: else
+          obj : variable [line 237]
+    Scope: if
+      obj : variable [line 243]
+    Scope: if
+  Scope: function:url_for
+    endpoint : parameter [line 262]
+    context : parameter [line 262]
+    args_str : parameter [line 262]
+    routes : variable [line 263]
+    path : variable [line 270]
+    m : variable [line 271]
+    Scope: if
+      bid : variable [line 273]
+      path : variable [line 274]
+  Scope: class:RequestHandler
+    send_html : function (function) params=3 [line 283]
+    send_css : function (function) params=2 [line 289]
+    redirect_to : function (function) params=2 [line 295]
+    read_form : function (function) params=1 [line 300]
+    do_GET : function (function) params=1 [line 305]
+    do_POST : function (function) params=1 [line 349]
+    Scope: function:send_html
+      self : parameter [line 283]
+      html : parameter [line 283]
+      status : parameter [line 283]
+    Scope: function:send_css
+      self : parameter [line 289]
+      css : parameter [line 289]
+    Scope: function:redirect_to
+      self : parameter [line 295]
+      url : parameter [line 295]
+    Scope: function:read_form
+      self : parameter [line 300]
+      length : variable [line 301]
+      body : variable [line 302]
+    Scope: function:do_GET
+      self : parameter [line 305]
+      path : variable [line 306]
+      m : variable [line 322]
+      html : variable [line 346]
+      Scope: if
+      Scope: if
+        html : variable [line 313]
+      Scope: if
+        html : variable [line 318]
+      Scope: if
+        bid : variable [line 324]
+        book : variable [line 325]
+        Scope: if
+          html : variable [line 327]
+        Scope: else
+          html : variable [line 330]
+      Scope: if
+        bid : variable [line 336]
+        book : variable [line 337]
+        Scope: if
+          html : variable [line 339]
+        Scope: else
+          html : variable [line 342]
+    Scope: function:do_POST
+      self : parameter [line 349]
+      path : variable [line 350]
+      form : variable [line 351]
+      m : variable [line 368]
+      html : variable [line 398]
+      Scope: if
+        new_id : variable [line 354]
+        Scope: genexp
+          b : variable [line 354]
+      Scope: if
+        bid : variable [line 370]
+        book : variable [line 371]
+        Scope: if
+          html : variable [line 373]
+      Scope: if
+        bid : variable [line 388]
+        book : variable [line 389]
+        Scope: if
+          html : variable [line 391]
+  Scope: if
+    server : variable [line 406]

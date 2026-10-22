@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %}إضافة كتاب · LibraryHub{% endblock %}
+{% block body %}
+<div class="page-header">
+  <div>
+    <h1>إضافة كتاب</h1>
+    <p class="dim">املأ البيانات لإنشاء كتاب جديد.</p>
+  </div>
+  <a class="btn btn-ghost" href="{{ url_for('index') }}">← رجوع</a>
+</div>
+
+<form class="form-box" method="post" action="{{ url_for('add_book') }}">
+  {% include "book_form.html" %}
+  <div class="form-actions">
+    <button type="submit" class="btn btn-main">إضافة الكتاب</button>
+    <a class="btn btn-ghost" href="{{ url_for('index') }}">إلغاء</a>
+  </div>
+</form>
+{% endblock %}

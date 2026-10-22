@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}LibraryHub{% endblock %}</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrapper topbar-inner">
+      <a class="brand" href="{{ url_for('index') }}">📚 LibraryHub</a>
+      <nav>
+        <a href="{{ url_for('index') }}">الكتب</a>
+        <a class="btn btn-main btn-small" href="{{ url_for('add_book') }}">+ إضافة كتاب</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrapper">
+    {% block body %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <div class="wrapper">© 2025 LibraryHub — نظام إدارة مكتبة</div>
+  </footer>
+</body>
+</html>
